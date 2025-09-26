@@ -28,7 +28,6 @@ rust-exampes:
     - cargo build
     - cargo test
 
-
 python-examples:
   image: "debian:bookworm-slim"
   stage: test
