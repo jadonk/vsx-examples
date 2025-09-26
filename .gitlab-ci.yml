@@ -71,12 +71,6 @@ pb2-techlab-workshop:
   stage: docs
   tags:
     - docker-amd64
-  parallel:
-    matrix:
-      - BOARD:
-        - PocketBeagle-2
-        DOC:
-        - TechLab-Workshop-Student-Handouts
   before_script:
     - rustup component add clippy
     - rustc --version && cargo --version  # Print version info for debugging
@@ -86,7 +80,7 @@ pb2-techlab-workshop:
     - fc-cache -f
   script:
     - cd docs
-    - typst compile ${BOARD}-${DOC}*.typ
+    - build.sh
   artifacts:
     paths:
-      - docs/${BOARD}-${DOC}.pdf
+      - docs/*.pdf
