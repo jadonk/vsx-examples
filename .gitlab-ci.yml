@@ -54,7 +54,6 @@ python-examples:
     - cd ${BOARD}/${EXAMPLE}/python
     - pylint -E main.py
 
-
 python-library:
   image: "python:alpine"
   stage: test
